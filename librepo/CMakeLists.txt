@@ -7,12 +7,11 @@ project(MPIWrapper VERSION 1.0.0
 	           DESCRIPTION "Wrapper for MPI libraries"
 		   LANGUAGES CXX)
 
-# Specify the C++ standard
-set(CMAKE_CXX_STANDARD 11)
-set(CMAKE_CXX_STANDARD_REQUIRED TRUE)
-
 # Add the library as a target
 add_library(MPIWrapper)
+
+# Specify the C++ standard
+target_compile_features(MPIWrapper PUBLIC cxx_std_11)
 
 # Create an alias for MPIWrapper, so that it can be referenced as MPIWrapper::MPIWrapper
 # This is helpful to users, as it helps avoid potential namespace conflicts, and it makes it clear that MPIWrapper::MPIWrapper is a library
